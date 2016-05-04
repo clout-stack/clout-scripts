@@ -154,7 +154,10 @@ fi
 cd $INSTALL_DIR
 git clone $PACKAGE_REPO
 cd $PACKAGE_NAME
-npm install > /dev/null
+npm install
+
+# Create database
+cd db && sqlite3 ./default.db .databases
 
 # Link Service
 echo "$PACKAGE_NAME: Link Service"
