@@ -77,7 +77,7 @@ else
 	echo "Installing Docker..."
 	# Update Kernal
 	# http://blog.hypriot.com/post/run-docker-rpi3-with-wifi/ # PI
-	apt-get install -y linux-image-generic-lts-raring linux-headers-generic-lts-raring > /dev/null
+	apt-get install -y linux-image-generic-lts-vivid linux-headers-generic-lts-vivid > /dev/null
 	curl https://get.docker.com/ | sh > /dev/null
 	echo "Installed!"
 fi
@@ -155,6 +155,7 @@ cd $INSTALL_DIR
 git clone $PACKAGE_REPO
 cd $PACKAGE_NAME
 npm install
+mkdir logs && chmod 777 logs
 
 # Create database
 cd db && sqlite3 ./default.db .databases
